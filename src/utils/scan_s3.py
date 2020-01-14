@@ -2,6 +2,8 @@ import boto3
 import json
 from json_schema import json_schema
 from itertools import groupby
+from collections import OrderedDict
+
 
 class BucketScanner:
     """A class scanning the s3 bucekt for data feeds from stac"""
@@ -25,10 +27,6 @@ class BucketScanner:
 
     def extract_schema(self, metadata: list):
         """ A method to extract schema from the stream feeds """
-        # get the object from s3 bucket
-        # load it into a JSON object
-        # return the object
-        feeds: list(str) = []
         schemas: list(str) = []
         for item in metadata:
             response = self.s3_client.get_object(
@@ -36,18 +34,17 @@ class BucketScanner:
                 Key=item["Key"]
             )
             feed_str = response["Body"].read().decode("utf-8")
-            feeds.append(feed_str)
+            # Hack for extra data found in the feeds
+            feed_str = feed_str.split("}{", 1)[0]
+            feed_str = feed_str + "}" if not feed_str.endswith("}") else feed_str
+            print(feed_str)
             schemas.append(json_schema.dumps(feed_str))
-        
+
         schema_occurence = {key: schemas.count(key) for key in schemas}
         schema_set: set(str) = set(schemas)
         distinct_schema_count = len(schema_set)
-        # for schema in schema_set:
-        #     print(schema, type(schema))
         print(f"No. of distinct schemas {distinct_schema_count}")
         print("======== schema occurences ========")
         for k, v in schema_occurence.items():
-            print(f"\n{k} -> {v}")
+            print(f"{k} <:> {v}")
         print("\n\n")
-        
-        
