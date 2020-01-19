@@ -122,29 +122,33 @@ def transform_json(header, payload_type, android_payload):
                         row[item] = value
         
         for field in schema["fields"]:
+            if field["transform"] is not None:
+                name = field["transform"].get("rename", field["name"])
+            else:
+                name = field["name"]
             try:
                 if field["transform"] is None and row[field["name"]] is not None:
                     if field["type"] == "string":
-                        result[field["name"]] = str(row[field["name"]])
+                        result[name] = str(row[field["name"]])
                     elif field["type"] == "integer":
-                        result[field["name"]] = int(row[field["name"]])
+                        result[name] = int(row[field["name"]])
                     elif field["type"] == "boolean":
-                        result[field["name"]] = bool(row[field["name"]])
+                        result[name] = bool(row[field["name"]])
                     elif field["type"] == "float":
-                        result[field["name"]] = float(row[field["name"]])
+                        result[name] = float(row[field["name"]])
                     else:
-                        result[field["name"]] = row[field["name"]]
+                        result[name] = row[field["name"]]
                 elif field["transform"] is not None and row[field["name"]] is not None:
                     if field["type"] == "datetime":
-                        result[field["name"]] = dp.parse(row[field["name"]]).strftime(field["transform"]["format"])
+                        result[name] = dp.parse(row[field["name"]]).strftime(field["transform"]["format"])
                     elif field["type"] == "timestamp":
                         if len(str(row[field["name"]])) > 10:
                             place = len(str(row[field["name"]])) - 10
                             row[field["name"]] = float(".".join([str(row[field["name"]])[:-place], str(row[field["name"]])[10:]]))
-                        result[field["name"]] = datetime.fromtimestamp(float(row[field["name"]])) \
+                        result[name] = datetime.fromtimestamp(float(row[field["name"]])) \
                             .strftime(field["transform"]["format"])
                 else:
-                    result[field["name"]] = row[field["name"]]
+                    result[name] = row[field["name"]]
             except ValueError:
                 # result[f"__error__{field['name']}"] = f"Error while transforming {field['name']}:{row[field['name']]}"
                 pass

@@ -9,8 +9,8 @@ from pathlib import Path
 
 def main():
     """ main function """
-    streams = ["calendar"]
-    # streams = ["calendar", "contacts", "deviceInformation", "gsmActivity", "location", "networkInformation", "smsActivity"]
+    # streams = ["gsmActivity"]
+    streams = ["calendar", "contacts", "deviceInformation", "gsmActivity", "location", "networkInformation", "smsActivity"]
     prefix = "firehose/layer-raw"
     bucket_name = "data-jumo-now-staging"
     aws_profile = "jumo-production"
@@ -32,7 +32,7 @@ def main():
             # print(feed)
             # feeds = [json.loads('[' + feed.replace("}{", "},{") + ']') for feed in feeds]
             feed = json.loads('[' + feed.replace("}{", "},{") + ']')
-            print(json.dumps(feed, indent=2))
+            # print(json.dumps(feed, indent=2))
             # print("\n===================================================================\n")
             
             transformed_rows = list()
