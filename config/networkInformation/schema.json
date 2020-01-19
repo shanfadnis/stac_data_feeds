@@ -1,0 +1,30 @@
+{
+    "name": "jumo_now_network_information_flatten",
+    "version": "1.0",
+    "fields": [
+        {
+            "name": "SSID",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "BSSID",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "IPAddress",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "IPV4Address",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        }
+    ]
+}

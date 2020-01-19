@@ -1,0 +1,192 @@
+{
+    "name": "jumo_now_device_information_flatten",
+    "version": "1.0",
+    "fields": [
+        {
+            "name": "batteryLevel",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "brand",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "carrier",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "deviceCountry",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "deviceId",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "deviceLocale",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "deviceName",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "firstInstallTime",
+            "nullable": "true",
+            "type": "timestamp",
+            "transform": {
+                "pattern": null,
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        {
+            "name": "IPAddress",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "installReferrer",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "instanceID",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "lastUpdateTime",
+            "nullable": "true",
+            "type": "timestamp",
+            "transform": {
+                "pattern": null,
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        {
+            "name": "MACAddress",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "manufacturer",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "maxMemory",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "model",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "phoneNumber",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "readableVersion",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "serialNumber",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "systemName",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "systemVersion",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "timezone",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "totalDiskCapacity",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "totalMemory",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "uniqueID",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "userAgent",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "version",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "isEmulator",
+            "nullable": "true",
+            "type": "boolean",
+            "transform": null
+        },
+        {
+            "name": "isPinOrFingerprintSet",
+            "nullable": "true",
+            "type": "boolean",
+            "transform": null
+        },
+        {
+            "name": "deviceType",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        }
+    ]
+}

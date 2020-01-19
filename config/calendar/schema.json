@@ -1,0 +1,105 @@
+{
+    "name": "jumo_now_calendar_flatten",
+    "version": "1.0",
+    "fields": [
+        {
+            "name": "date",
+            "nullable": "true",
+            "type": "datetime",
+            "transform": {
+                "pattern": "%Y-%m-%dT%H:%M:%S.%fZ",
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        {
+            "name": "allDay",
+            "nullable": "true",
+            "type": "boolean",
+            "transform": null
+        },
+        {
+            "name": "attendees",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "availability",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "allowedAvailabilities",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "allowsModifications",
+            "nullable": "true",
+            "type": "boolean",
+            "transform": null
+        },
+        {
+            "name": "color",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "isPrimary",
+            "nullable": "true",
+            "type": "boolean",
+            "transform": null
+        },
+        {
+            "name": "source",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "title",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "type",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "description",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "endDate",
+            "nullable": "true",
+            "type": "datetime",
+            "transform": {
+                "pattern": "%Y-%m-%dT%H:%M:%S.%fZ",
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        {
+            "name": "location",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "startDate",
+            "nullable": "true",
+            "type": "datetime",
+            "transform": {
+                "pattern": "%Y-%m-%dT%H:%M:%S.%fZ",
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        }
+    ]
+}

@@ -25,21 +25,25 @@ class BucketScanner:
         )
         return len(response["Contents"]), response["Contents"]
 
-    def extract_schema(self, metadata: list):
+    def extract_feeds(self, metadata: list) -> list:
         """ A method to extract schema from the stream feeds """
-        schemas: list(str) = []
+        # feeds = []
         for item in metadata:
             response = self.s3_client.get_object(
                 Bucket=self.bucket_name,
                 Key=item["Key"]
             )
-            feed_str = response["Body"].read().decode("utf-8")
+            # feeds.append(response["Body"].read().decode("utf-8"))
+            return response["Body"].read().decode("utf-8")
+        # return feeds
+
+    def print_feed_schema(self, feeds: list):
+        schemas: list(str) = []
+        for feed_str in feeds:
             # Hack for extra data found in the feeds
             feed_str = feed_str.split("}{", 1)[0]
             feed_str = feed_str + "}" if not feed_str.endswith("}") else feed_str
-            print(feed_str)
             schemas.append(json_schema.dumps(feed_str))
-
         schema_occurence = {key: schemas.count(key) for key in schemas}
         schema_set: set(str) = set(schemas)
         distinct_schema_count = len(schema_set)
@@ -47,4 +51,4 @@ class BucketScanner:
         print("======== schema occurences ========")
         for k, v in schema_occurence.items():
             print(f"{k} <:> {v}")
-        print("\n\n")
+        print("\n")

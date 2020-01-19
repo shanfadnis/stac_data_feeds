@@ -1,0 +1,57 @@
+{
+    "name": "jumo_now_gsm_activity_flatten",
+    "version": "1.0",
+    "fields": [
+        {
+            "name": "rawType",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "type",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "dateTime",
+            "nullable": "true",
+            "type": "datetime",
+            "transform": {
+                "pattern": [
+                    "%b %d, %Y %I:%M:%S %p",
+                    "%d %b %Y %I:%M:%S %p"
+                ],
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        {
+            "name": "timestamp",
+            "nullable": "true",
+            "type": "timestamp",
+            "transform": {
+                "rename": "activity_timestamp",
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        {
+            "name": "name",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "duration",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "phoneNumber",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        }
+    ]
+}

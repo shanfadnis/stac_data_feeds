@@ -1,0 +1,106 @@
+{
+    "name": "jumo_now_network_information_flatten",
+    "version": "1.0",
+    "fields": [
+        {
+            "name": "_id",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "thread_id",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "address",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "date",
+            "nullable": "true",
+            "type": "timestamp",
+            "transform": {
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        {
+            "name": "date_sent",
+            "nullable": "true",
+            "type": "timestamp",
+            "transform": {
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        {
+            "name": "protocol",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "read",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "status",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "type",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "reply_path_present",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "body",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "locked",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "sub_id",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "error_code",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        },
+        {
+            "name": "creator",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "seen",
+            "nullable": "true",
+            "type": "integer",
+            "transform": null
+        }
+    ]
+}

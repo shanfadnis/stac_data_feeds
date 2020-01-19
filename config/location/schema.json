@@ -1,0 +1,63 @@
+{
+    "name": "jumo_now_location_flatten",
+    "version": "1.0",
+    "fields": [
+        {
+            "name": "coords",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "accuracy",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "altitude",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "heading",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "latitude",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "longitude",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "speed",
+            "nullable": "true",
+            "type": "float",
+            "transform": null
+        },
+        {
+            "name": "mocked",
+            "nullable": "true",
+            "type": "boolean",
+            "transform": null
+        },
+        {
+            "name": "timestamp",
+            "nullable": "true",
+            "type": "timestamp",
+            "transform": {
+                "rename": "location_timestamp",
+                "format": "%Y-%m-%d %H:%M:%S"
+            }
+        }
+    ]
+}

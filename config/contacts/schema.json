@@ -1,0 +1,108 @@
+{
+    "name": "jumo_now_contacts_flatten",
+    "version": "1.0",
+    "fields": [
+        {
+            "name": "postalAddress",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "emailAddress",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "urlAddress",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "note",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "department",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "company",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "familyName",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "givenName",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "rawContactId",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "recordID",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "phoneNumbers",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "thumbnailPath",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "hasThumbnail",
+            "nullable": "true",
+            "type": "boolean",
+            "transform": null
+        },
+        {
+            "name": "jobTitle",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "suffix",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "prefix",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        },
+        {
+            "name": "middleName",
+            "nullable": "true",
+            "type": "string",
+            "transform": null
+        }
+    ]
+}
