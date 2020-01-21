@@ -151,8 +151,7 @@ def transform_json(header, payload_type, android_payload):
                     result[name] = row[field["name"]]
             except ValueError:
                 # result[f"__error__{field['name']}"] = f"Error while transforming {field['name']}:{row[field['name']]}"
-                pass
-        
+                result[name] = None
         
         message_data = OrderedDict()
         message_data.update(header)
