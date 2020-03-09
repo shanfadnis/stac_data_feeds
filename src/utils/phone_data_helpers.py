@@ -144,8 +144,9 @@ def transform_json(header, payload_type, android_payload):
                     elif field["type"] == "timestamp":
                         if len(str(row[field["name"]])) > 10:
                             place = len(str(row[field["name"]])) - 10
-                            row[field["name"]] = float(".".join([str(row[field["name"]])[:-place], str(row[field["name"]])[10:]]))
-                        result[name] = datetime.fromtimestamp(float(row[field["name"]])) \
+                            row[field["name"]] = float(".".join([str(row[field["name"]])[:-place],
+                                                                 str(row[field["name"]])[10:]]))
+                        result[name] = datetime.fromtimestamp(float(row[field["name"]]))\
                             .strftime(field["transform"]["format"])
                 else:
                     result[name] = row[field["name"]]

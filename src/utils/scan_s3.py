@@ -1,15 +1,12 @@
 import boto3
-import json
 from json_schema import json_schema
-from itertools import groupby
-from collections import OrderedDict
 
 
 class BucketScanner:
     """A class scanning the s3 bucekt for data feeds from stac"""
 
     def __init__(self, profile_name: str, bucket_name: str, prefix: str):
-        """ constructor for calss BuckerScanner """
+        """Constructor"""
         self.profile_name = profile_name
         self.bucket_name = bucket_name
         self.prefix = prefix
@@ -38,17 +35,17 @@ class BucketScanner:
         # return feeds
 
     def print_feed_schema(self, feeds: list):
-        schemas: list(str) = []
+        schemas = []
         for feed_str in feeds:
             # Hack for extra data found in the feeds
             feed_str = feed_str.split("}{", 1)[0]
             feed_str = feed_str + "}" if not feed_str.endswith("}") else feed_str
             schemas.append(json_schema.dumps(feed_str))
-        schema_occurence = {key: schemas.count(key) for key in schemas}
-        schema_set: set(str) = set(schemas)
+        schema_occurrence = {key: schemas.count(key) for key in schemas}
+        schema_set = set(schemas)
         distinct_schema_count = len(schema_set)
         print(f"No. of distinct schemas {distinct_schema_count}")
         print("======== schema occurences ========")
-        for k, v in schema_occurence.items():
+        for k, v in schema_occurrence.items():
             print(f"{k} <:> {v}")
         print("\n")
